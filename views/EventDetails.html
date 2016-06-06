@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="eventsApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav">
+
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div ng-controller="eventsController">
+        <img ng-src="/img/AngularJS-large.png" />
+        <div class="row">
+            <div class="span1">
+                <h1 ng-class="myclass" ng-bind="events.name"></h1>
+                <h2 ng-style="mystyle" ng-bind-template="{{events.name}} {{events.date}}"><</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span3">
+                <div><strong>Date:</strong> {{events.date}}</div>
+                <div><strong>Time:</strong>{{events.time}}</div>
+            </div>
+            <div class="span4">
+                <address>
+                    <strong>Address:</strong><br>
+                    {{events.location.address}}<br>
+                    {{events.location.city}}<br>
+                    {{events.location.state}}
+                </address>
+            </div>
+        </div>
+        <div ng-show="boolval">Show this</div>
+        <div ng-hide="boolval">Hide this</div>
+        <h3/>
+        <h3>Session</h3>
+        <ul class="thumals">
+            <ol ng-repeat="session in events.session">
+                <div class="row session">
+                    <div class="span0 well votingWidget">
+                        <div class="votingButton">
+                            <i class="fa fa-chevron-up icon-white"aria-hidden="true"></i>
+                        </div>
+                        <div class="badge badge-inverse">
+                            <div>{{session.voteUpCount}}</div>
+                        </div>
+                        <div class="votingButton">
+                            <i class="icon-chervon-down"></i>
+                        </div>
+                    </div>
+                    <div class="span9">
+                        <h4 class="well-title">{{session.name}}</h4>
+                        <h6>{{session.createname}}</h6>
+                    </div>
+                </div>
+            </ol>
+        </ul>
+    </div>
+</div>
+
+</body>
+<script src="/lib/angular.min.js"></script>
+<script src="/lib/jquery.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/controllers/eventsController.js"></script>
+</html>
