@@ -1,0 +1,33 @@
+{
+  "name": "Angular",
+  "time": "5.30 am",
+  "date": 1062016,
+  "location": {
+    "address": "A.M.Puram(v),Kanavaram(p)",
+    "city": "Sathyavedu",
+    "state": "A.P"
+  },
+  "imageUrl": "/img/AngularJS-large.png",
+  "session": [
+    {
+      "name": "session1",
+      "createname": "raja",
+      "duration": 1,
+      "voteUpCount": 0
+    },
+    {
+      "name": "session2",
+      "createname": "pallala",
+      "duration": 2,
+      "voteUpCount": 0
+    },
+    {
+      "name": "session3",
+      "createname": "sekhar",
+      "duration": 4,
+      "voteUpCount": 0
+    }
+  ]
+}
+
+

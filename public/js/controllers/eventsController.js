@@ -1,36 +1,42 @@
 
-eventsApp.controller("eventsController",function eventsController($scope){
+eventsApp.controller("eventsController",function eventsController($scope,eventData, $anchorScroll){
     
     $scope.boolval=false;
         $scope.mystyle={color:'red'};
         $scope.myclass="blue";
-    $scope.events={
-        name:"Angular",
-        time: "5.30 am" ,
-        date: "1/06/2016",
-        
-        location:{
-            address:"A.M.Puram(v),Kanavaram(p)",
-            city:"Sathyavedu",
-            state:"A.P"
+    $scope.sortorder='createname';
+
+    // callls $https Services
+
+    /*eventData.getevents()
+        .success(function (events) {
+            $scope.events=events;
+
+        })
+        .error(function (data, status, headers, config) {
+
+        $log.warn(data, status, headers, config);
+
+    })
+    */
+    //call $resource One way
+    //$scope.events=eventData.getevents();
+
+    //call $resource anthor way
+    eventData.getevents()
+
+      .$promise.then(
+        function (events){
+            $scope.events=events;
+            console.log(events);
         },
-        imageUrl:"/img/AngularJS-large.png",
-        session:[
-            {
-                name:"session1",
-                createname:"pallala",
-                voteUpCount:0
-            },
-            {
-                name:"session2",
-                createname:"raja",
-                voteUpCount:0
-            },
-            {
-                name:"session3",
-                createname:"sekhar",
-                voteUpCount:0
-            }
-        ]
+        function (response) {
+            console.log(response);
+
+        }
+    )
+    $scope.scrollToSession=function () {
+
+        $anchorScroll()
     }
 })
