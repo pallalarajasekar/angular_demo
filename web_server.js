@@ -46,3 +46,9 @@ app.get('/filter',function (req,res) {
 app.get('/cookie',function (req,res) {
     res.render('cookieSample');
 })
+app.get('/index',function (req,res) {
+    res.render('index')
+})
+ app.get('/dcs',function (req,res) {
+ res.render('DirectiveControllerSample')
+ })
